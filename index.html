@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <!-- 🌐 Metadados e estilos principais -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Feliz Aniversário!</title>
+
+  <!-- ✨ Fonte fofa do Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet" />
+
+  <style>
+    /* 🎨 Estilos gerais da página */
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to bottom, #ffe6f0, #fff);
+      font-family: 'Dancing Script', cursive;
+      color: #b85c8e;
+      text-align: center;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    .content {
+      padding: 30px;
+      margin: 40px auto;
+      max-width: 800px;
+    }
+
+    h1 {
+      font-size: 3em;
+      margin-top: 40px;
+    }
+
+    .caracteres-fofos {
+      font-size: 1.4em;
+      margin: 10px 0;
+    }
+
+    /* 🖼️ Galeria de imagens da aniversariante */
+    .galeria {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin: 30px 0;
+    }
+
+    .galeria img {
+      width: 200px;
+      border-radius: 20px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .galeria img:hover {
+      transform: scale(1.05);
+    }
+
+    /* 🎁 Botão de surpresa */
+    .surpresa-btn {
+      background-color: #ffcce0;
+      border: none;
+      border-radius: 25px;
+      padding: 15px 30px;
+      font-size: 1.2em;
+      color: #b85c8e;
+      cursor: pointer;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      transition: all 0.3s ease;
+      margin: 10px;
+    }
+
+    .surpresa-btn:hover {
+      background-color: #ffb3d9;
+      transform: scale(1.05);
+    }
+
+    /* 💌 Mensagem oculta de carinho */
+    .mensagem {
+      margin-top: 30px;
+      font-size: 1.6em;
+      display: none;
+      opacity: 0;
+      transition: opacity 1s ease;
+      white-space: pre-line;
+    }
+
+    .mensagem.mostrar {
+      display: block;
+      opacity: 1;
+    }
+
+    footer {
+      margin-top: 50px;
+      font-size: 1.1em;
+      opacity: 0.7;
+    }
+
+    /* 💖 Corações flutuantes */
+    .heart {
+      position: fixed;
+      top: -50px;
+      color: #ffb6c1;
+      font-size: 2em;
+      animation: fall 5s linear infinite;
+      pointer-events: none;
+      z-index: 999;
+    }
+
+    @keyframes fall {
+      to {
+        transform: translateY(110vh) rotate(360deg);
+      }
+    }
+
+    /* ✨ Glitters animados */
+    .glitter {
+      position: absolute;
+      width: 4px;
+      height: 4px;
+      background: #fff;
+      box-shadow: 0 0 8px #fff;
+      border-radius: 50%;
+      animation: sparkle 2s infinite;
+    }
+
+    @keyframes sparkle {
+      0%, 100% { opacity: 0; transform: scale(1); }
+      50% { opacity: 1; transform: scale(1.5); }
+    }
+
+    /* 🐰 Área do jogo com coelhinhos */
+    #jogoCoelhinho {
+      margin-top: 40px;
+      position: relative;
+      height: 300px;
+      border: 2px dashed #ffb3d9;
+      border-radius: 15px;
+      background: #ffe6f0;
+      overflow: hidden;
+    }
+
+    #contador {
+      font-size: 1.5em;
+      margin-bottom: 10px;
+      color: #b85c8e;
+    }
+
+    .coelhinho {
+      position: absolute;
+      width: 60px;
+      height: 60px;
+      cursor: pointer;
+      user-select: none;
+      transition: transform 0.2s;
+    }
+
+    .coelhinho:hover {
+      transform: scale(1.2);
+    }
+  </style>
+</head>
+<body>
+  <div class="content">
+    <!-- 🎉 Título principal -->
+    <h1>Feliz Aniversário Baby olhinhos! 🐇</h1>
+
+    <!-- 📷 Galeria de fotos -->
+    <div class="galeria">
+      <img src="images/olhudinhabunitinhanivel1.jpg" alt="Babyolhos" />
+      <img src="images/olhudinhabunitinhanivel2.jpg" alt="Auuuunnnnn" />
+    </div>
+
+    <!-- ✨ Textos fofos -->
+    <div class="caracteres-fofos">Olha como mofia é linda!!! ฅᨐฅ<br>｡ﾟ•┈୨♡୧┈• ｡ﾟ</div>
+    <div class="caracteres-fofos">Para uma bbzinha muito especial e que merece tudo do bom e do melhor nessa vida!˙ . ꒷ 🍰 . 𖦹˙</div>
+
+    <!-- 🎁 Botão que revela a mensagem e inicia os áudios -->
+    <button class="surpresa-btn" onclick="mostrarMensagem()">𓂃 ࣪˖ ִֶָ🐇 Clique para uma surpresa! ༘࿐</button>
+
+    <!-- 💌 Mensagem surpresa -->
+    <p class="mensagem" id="mensagem">
+        ⋅˚₊‧ ୨🐇୧ ‧₊˚ ⋅
+        Hoje é um dia muito especial para uma nenem tão especial quanto,
+        eu fiz esse site como demonstração do meu carinho por você bb.
+        Deu um pouco de trabalho mas foi realizador conseguir entregar isso para você
+        eu te amo muito amor, e quero que o dia de hoje seja o melhor de todos!!
+        tomara que mofia coma um bolinho bem abrupto e queru que mofia guarde um pedaço pra eur!
+        Novamente, eu amo muito você bb, um beijo e um abraço bem apertado! ♡
+        ────୨ৎ────
+        🐶ྀི você merece tudo de bom na sua vida bb, mofia é a melhor pessoa do mundo!! Auunnnn ִֶ🐇་༘
+    </p>
+
+    <!-- 🐇 Área interativa do jogo -->
+    <div id="jogoCoelhinho">
+      <div id="contador">Olhude Clicker: 0</div>
+    </div>
+
+    <!-- 📝 Rodapé com dedicatória -->
+    <footer>
+      Feito com carinho por alguém que te ama muito 𖦹 ♡
+    </footer>
+  </div>
+
+  <!-- 🎵 Áudios -->
+  <audio id="musica" src="audios/cuteaestheticmix.mp3" loop></audio>
+  <audio id="efeito" src="audios/magic.mp3"></audio>
+  <audio id="somPulo" src="audios/hop.mp3"></audio>
+  <audio id="somBonus" src="audios/alertaminiun.mp3"></audio> <!-- áudio bônus de 100 pontos -->
+
+  <!-- 📜 Scripts e lógica do jogo -->
+  <script>
+    const musica = document.getElementById("musica");
+    const efeito = document.getElementById("efeito");
+    const somPulo = document.getElementById("somPulo");
+    const somBonus = document.getElementById("somBonus");
+
+    const jogo = document.getElementById("jogoCoelhinho");
+    const contador = document.getElementById("contador");
+    let pontos = 0;
+    let intervalID;
+    let intervalFruta;
+
+    // ✨ Exibe mensagem, toca músicas e inicia o jogo
+    function mostrarMensagem() {
+      const msg = document.getElementById("mensagem");
+      msg.classList.add("mostrar");
+      musica.play();
+      efeito.play();
+      iniciarJogo();
+    }
+
+    // 💖 Corações caindo
+    function criarCoracao() {
+      const coracao = document.createElement("div");
+      coracao.className = "heart";
+      coracao.innerHTML = "❤";
+      coracao.style.left = Math.random() * 100 + "vw";
+      coracao.style.animationDuration = 3 + Math.random() * 2 + "s";
+      document.body.appendChild(coracao);
+      setTimeout(() => coracao.remove(), 5000);
+    }
+    setInterval(criarCoracao, 300);
+
+    // ✨ Geração de glitters aleatórios
+    for (let i = 0; i < 50; i++) {
+      const glitter = document.createElement("div");
+      glitter.className = "glitter";
+      glitter.style.top = Math.random() * 100 + "vh";
+      glitter.style.left = Math.random() * 100 + "vw";
+      glitter.style.animationDuration = (Math.random() * 2 + 1) + "s";
+      document.body.appendChild(glitter);
+    }
+
+    // 🐇 Criação dos coelhinhos
+    function criarCoelhinho() {
+      const coelhinho = document.createElement("img");
+      coelhinho.src = "images/bunny.png";
+      coelhinho.className = "coelhinho";
+      const maxX = jogo.clientWidth - 60;
+      const maxY = jogo.clientHeight - 60;
+      coelhinho.style.left = Math.random() * maxX + "px";
+      coelhinho.style.top = Math.random() * maxY + "px";
+      coelhinho.onclick = () => {
+        pontos++;
+        contador.textContent = `Olhude Clicker: ${pontos}`;
+        somPulo.currentTime = 0;
+        somPulo.play();
+        coelhinho.remove();
+      };
+      jogo.appendChild(coelhinho);
+      setTimeout(() => {
+        if (coelhinho.parentElement) coelhinho.remove();
+      }, 3000);
+    }
+
+    // 🍓 Criação da frutinha bônus
+ function criarFrutinha() {
+  const frutas = [
+    "images/melancia.png",
+    "images/maca.png",
+    "images/cereja.png",
+    "images/uva.png",
+    "images/morango.png"
+  ];
+
+  const frutinha = document.createElement("img");
+  // Escolhe uma fruta aleatória
+  const frutaEscolhida = frutas[Math.floor(Math.random() * frutas.length)];
+  frutinha.src = frutaEscolhida;
+  frutinha.className = "coelhinho";
+
+  const maxX = jogo.clientWidth - 60;
+  const maxY = jogo.clientHeight - 60;
+  frutinha.style.left = Math.random() * maxX + "px";
+  frutinha.style.top = Math.random() * maxY + "px";
+
+  let ultimoBonusTocado = 0
+
+  frutinha.onclick = () => {
+    pontos += 5;
+    contador.textContent = `Olhude Clicker: ${pontos}`;
+    somPulo.currentTime = 0;
+    somPulo.play();
+    frutinha.remove();
+
+    if (pontos >= ultimoBonusTocado + 50) {
+      ultimoBonusTocado += 50;
+      somBonus.currentTime = 0;
+      somBonus.play();
+    }
+  };
+
+  jogo.appendChild(frutinha);
+
+  setTimeout(() => {
+    if (frutinha.parentElement) frutinha.remove();
+  }, 3000);
+ }
+
+
+    // 🕹️ Início do jogo
+    function iniciarJogo() {
+      if (intervalID) clearInterval(intervalID);
+      if (intervalFruta) clearInterval(intervalFruta);
+      pontos = 0;
+      contador.textContent = `Olhude Clicker: ${pontos}`;
+      intervalID = setInterval(criarCoelhinho, 1500);
+      intervalFruta = setInterval(criarFrutinha, 5000);
+    }
+  </script>
+</body>
+</html>
